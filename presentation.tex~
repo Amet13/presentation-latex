@@ -82,9 +82,9 @@
 \title{Заголовок презентации}
 \subtitle{Подзаголовок}
 
-\author[Автор А.\:А. Соавтор И.\:И.]{
-Автор А.\:А., И-41д,
-\href{mailto:mail@mail.ru}{mail@mail.ru} \\
+\author[Умеров А.\:Р. Соавтор И.\:И.]{
+Умеров А.\:Р., М-41д,
+\href{mailto:admin@amet13.name}{admin@amet13.name} \\
 Соавтор И.\:И., зван. должн., \href{mailto:example@mail.ru}{example@mail.ru}
 }
 \date{Город Год}
@@ -94,7 +94,7 @@
 
 \frame[plain]{\titlepage} % Титульный слайд
 
-%\section{План}
+% \section{План}
 % \begin{frame}
 % \frametitle{\insertsection} % Заголовки текущего раздела
 % \tableofcontents
