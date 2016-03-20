@@ -1,0 +1,109 @@
+% Тема СевГУ для шаблона презентации Beamer
+% Автор: Амет Умеров (admin@amet13.name)
+% Дата создания: 10 июня 2014 года
+
+%%% Необходимые пакеты для работы с презентацией
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{hyperref} 
+
+\ProvidesPackage{beamerthemeSevGU}[2014/06/10] % Название темы и дата создания
+
+\usefonttheme{default} % Стандартный шрифт темы
+
+%%% Определение цветовых схем
+% \definecolor{SevGUblue}{cmyk}{1,0.66,0,0.02}        % Pantone 286
+\definecolor{SevGUblue}{cmyk}{0.429,0.209,0,0.251} % RGB(109,151,191)
+\definecolor{SevGUgreen}{cmyk}{0.69,0,1,0}          % Pantone 361
+\definecolor{SevGUred}{cmyk}{0,0.95,1,0.29}         % Pantone 484
+\definecolor{SevGUorange}{cmyk}{0,0.42,0.77,0}      % Pantone 131
+\setbeamercolor{WhiteOnBlue}{bg=SevGUblue,fg=white} % White on Pantone 286
+\setbeamercolor{BlueOnWhite}{fg=SevGUblue,bg=white} % Pantone 286 on White
+
+%%% Гиперссылки
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,          % русские буквы в раздела PDF
+    colorlinks=true,       % false: ссылки в рамках; true: цветные
+    linkcolor=white,       % внутренние ссылки
+    citecolor=SevGUblue,     % на библиографию
+    filecolor=SevGUblue,     % на файлы
+    urlcolor=SevGUblue       % на URL
+}
+
+%%% Оформление стиля
+\setbeamertemplate{navigation symbols}{}    % Полупрозрачная панель навигации (закомментировать, если надо включить)
+\setbeamertemplate{itemize items}[circle]   % Стиль маркера списка: triangle, circle, square, ball
+% \setbeamertemplate{theorems}[numbered]     % Нумерация теорем
+
+%%% Установка цветов для различных объектов (см. Beamer User Guide)
+\usecolortheme[named=SevGUblue]{structure}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{frametitle}{bg=SevGUblue}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{headline}{bg=SevGUblue}
+\setbeamercolor{alerted text}{fg=SevGUred}
+\setbeamercolor{itemize item}{fg=SevGUblue}
+\setbeamercolor{itemize subitem}{fg=SevGUblue}
+\setbeamercolor{itemize subsubitem}{fg=SevGUblue}
+\setbeamercolor{block title example}{fg=SevGUgreen}
+\AtBeginEnvironment{exampleblock}{
+    \setbeamercolor{itemize item}{fg=SevGUgreen}
+    \setbeamercolor{itemize subitem}{fg=SevGUgreen}
+    \setbeamercolor{itemize subsubitem}{fg=SevGUgreen}
+}
+\setbeamercolor{palette primary}{bg=SevGUblue}
+\setbeamercolor{palette primary}{fg=white}
+\setbeamercolor{palette secondary}{bg=SevGUblue}
+\setbeamercolor{palette secondary}{fg=white}
+\setbeamercolor{palette tertiary}{bg=SevGUblue}
+\setbeamercolor{palette tertiary}{fg=white}
+
+%%% Заголовки и логотипы
+\setbeamertemplate{headline}[default]{} % Пустой заголовок
+\setbeamertemplate{frametitle} % Титул с логотипом
+{
+    \nointerlineskip
+    \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{frametitle} % Маленький логотип
+		\vbox{}\vskip-0.7ex% 
+		\begin{wrapfigure}{r}{0.12\textwidth}
+			\vskip-3ex
+			\includegraphics[width=0.075\textwidth]{SevGU-theme/SevGU-main}
+ 		\end{wrapfigure}
+ 		\strut\insertframetitle
+
+ 		\small\strut\insertframesubtitle
+		\vskip-1ex%
+    \end{beamercolorbox}
+}
+
+\makeatletter
+\setbeamertemplate{footline} % Нижний бар
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,center]{WhiteOnBlue}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,center]{WhiteOnBlue}%
+    \usebeamerfont{title in head/foot}\insertshortinstitute
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1ex,right]{WhiteOnBlue}%
+    \usebeamerfont{date in head/foot}        \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\addtobeamertemplate{title page}{% % Главный логотип
+  \leavevmode%
+  \vspace{-.23cm}
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\paperheight]{frametitle}
+      \begin{center}
+        \includegraphics[height=0.28\paperheight]{SevGU-theme/SevGU-main} 
+        \vspace{-0.025\paperheight}
+      \end{center}
+   \end{beamercolorbox}}
+}{\vspace{3cm}}

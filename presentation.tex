@@ -1,0 +1,217 @@
+%!TEX TS-program = xelatex
+
+% Шаблон \LaTeX для использования в презентациях
+% Автор: Амет Умеров (admin@amet13.name)
+% Дата создания: 9 июня 2014 года
+% Для удобной работы с файлом рекомендую использовать
+% ОС GNU/Linux, редактор TeXStudio и движок XeLaTeX
+% Для построения графиков можно воспользоваться пакетом GeoGebra,
+% а также сайтом http://texample.net/tikz/
+% Темы оформления представлены на сайте: http://www.hartwork.org/beamer-theme-matrix/
+
+\documentclass[xetex,mathserif,serif,t]{beamer} % [t], [c], или [b] --- вертикальное выравнивание на слайдах (верх, центр, низ)
+% \documentclass[handout]{beamer} % Раздаточный материал (на слайдах всё сразу)
+% \documentclass[aspectratio=169]{beamer} % Соотношение сторон
+
+% \usetheme{Berkeley} % Тема оформления
+% \usetheme{Bergen}
+% \usetheme{Szeged}
+
+% \usecolortheme{beaver} % Цветовая схема
+% \useinnertheme{circles}
+% \useinnertheme{rectangles}
+% \usecolortheme{crane}
+
+\usetheme{SevGU} % Тема СевГУ
+
+%%% Работа с русским языком
+\usepackage{fontspec}
+\usepackage{xunicode} % Дополнительно к юникоду
+\usepackage{xltxtra}
+
+\setmainfont{Arial}
+\setmonofont{Courier New}
+
+%%% Beamer по-русски
+\newtheorem{rtheorem}{Теорема}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%%% Номера формул
+% \mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+% \usepackage{leqno} % Нумерация формул слева
+
+%%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% % Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % Каталоги с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Программирование
+\usepackage{etoolbox} % Логические операторы
+
+%%% Другие пакеты
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе
+\usepackage{soulutf8} % Модификаторы начертания
+\usepackage{csquotes} % Еще инструменты для ссылок
+% \usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+\usepackage{multicol} % Несколько колонок
+
+%%% Картинки
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{verbatim,calc,ifthen}
+
+\title{Заголовок презентации}
+\subtitle{Подзаголовок}
+
+\author[Умеров А.\:Р. Соавтор И.\:И.]{
+Умеров А.\:Р., М-41д,
+\href{mailto:admin@amet13.name}{admin@amet13.name} \\
+Соавтор И.\:И., зван. должн., \href{mailto:example@mail.ru}{example@mail.ru}
+}
+\date{Город Год}
+\institute[ВУЗ]{Полное название ВУЗа}
+
+\begin{document}
+
+\frame[plain]{\titlepage} % Титульный слайд
+
+% \section{План}
+% \begin{frame}
+% \frametitle{\insertsection} % Заголовки текущего раздела
+% \tableofcontents
+% \end{frame}
+
+\section{Пункт 1}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\section{Пункт 2}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{main}
+	 \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{enumerate}
+	\item Элемент 1
+	\uncover<2->{\item Элемент 2}
+	\uncover<3->{\item Элемент 3*}
+\end{enumerate}
+\begin{figure}[h]
+	\begin{center}
+		\begin{multicols}{2}
+		\includegraphics[width=0.3\linewidth]{one} \pause \\
+		\uncover<2->{\includegraphics[width=0.3\linewidth]{two}} \pause \\
+		\end{multicols}
+		\uncover<3->{\includegraphics[width=0.15\linewidth]{three}}
+	 \end{center}
+\end{figure}
+\vfill
+\footnotesize{* Какая-то сноска}
+\end{frame}
+
+\section{Пункт 3}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{itemize}
+	\begin{multicols}{2}
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1 \pause \columnbreak
+	\item Элемент 2
+	\item Элемент 2
+	\item Элемент 2
+	\end{multicols}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{itemize}
+	\item Элемент 1
+	\begin{itemize}
+		\item Подэлемент 1
+		\item Подэлемент 2
+		\item Подэлемент 3
+	\end{itemize}
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\section{Выводы}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+	\item Элемент 4
+\end{itemize}
+\end{frame}
+
+\section{Информационные источники}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{itemize}
+	\item Источник 1: \url{http://1.example.com}
+	\item Источник 2: \url{http://2.example.com}
+	\item Источник 3: \url{http://3.example.com}
+	\item Источник 4: \url{http://4.example.com}
+\end{itemize}
+\end{frame}
+
+\end{document}
