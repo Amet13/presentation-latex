@@ -9,5 +9,19 @@
 \documentclass[xetex,mathserif,serif,t]{beamer} % [t], [c], или [b] --- вертикальное выравнивание на слайдах (верх, центр, низ)
 %\documentclass[aspectratio=169,xetex,mathserif,serif,t]{beamer} % Если хотим соотношение сторон 16:9
 \input{preamble.tex}
+
+\title{Заголовок презентации}
+\subtitle{Подзаголовок}
+
+%%% Основные параметры презентации
+\author[Иванов А.\:Д., Петров И.\:С.]{
+Иванов А.\:Д., студент гр. И-41д, \href{mailto:ivanov@mail.ru}{ivanov@mail.ru} \\
+Петров И.\:С., к.т.н. доцент., \href{mailto:petrov@mail.ru}{petrov@mail.ru}
+}
+% \author[Иванов И.И.]{Иванов Иван Иванович, СевГУ} % Один автор
+\institute[СевГУ]{Севастопольский государственный университет}
+\date{09.06.2014}
+
+\begin{document}
 \input{slides.tex}
 \end{document}
