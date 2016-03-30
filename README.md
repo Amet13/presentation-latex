@@ -8,15 +8,19 @@ presentation-latex
 
 `Makefile`
 
+`preamble.tex` — преамбула в которой задаются настройки
+
 `presentation.pdf` — конечный результат компиляции
 
-`presentation.tex`
+`presentation.tex`— компилируемый файл, является "костяком" проекта
+
+`slides.tex` — само содержимое презентации
 
 `images/` — сюда складываются изображения, которые будут использоваться в презентации
 
 Работа с LaTeX
 --------------
-Для работы с LaTeX рекомендую использовать XeLaTeX и IDE [LaTeXila](https://wiki.gnome.org/Apps/LaTeXila).
+Для работы с LaTeX рекомендую использовать XeLaTeX и IDE [LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) или [Atom](https://atom.io/) с плагином [language-latex](https://atom.io/packages/language-latex).
 
 Как установить LaTeX: http://blog.amet13.name/2014/06/latex.html
 
