@@ -1,0 +1,68 @@
+%%% Преамбула
+
+%%% Темы оформления
+% https://www.hartwork.org/beamer-theme-matrix/
+% \usetheme{Berkeley}
+% \usetheme{Bergen}
+% \usetheme{Szeged}
+
+%%% Цветовые схемы
+% \usecolortheme{beaver}
+% \useinnertheme{circles}
+% \useinnertheme{rectangles}
+% \usecolortheme{crane}
+
+\usetheme{SevGU} % Тема СевГУ
+
+%%% Работа с русским языком
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+\setmainfont{Arial}
+\setmonofont{Courier New}
+
+%%% Beamer по-русски
+\newtheorem{rtheorem}{Теорема}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%%% Номера формул
+% \mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+% \usepackage{leqno} % Нумерация формул слева
+
+%%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}    % Для вставки рисунков
+\graphicspath{{images/}} % Каталоги с картинками
+\setlength\fboxsep{3pt}  % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig}     % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow}   % Слияние строк в таблице
+
+%%% Другие пакеты
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе
+\usepackage{soulutf8} % Модификаторы начертания
+\usepackage{csquotes} % Еще инструменты для ссылок
+\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+\usepackage{multicol} % Несколько колонок
+\usepackage{etoolbox} % Логические операторы
+
+%%% Картинки
+\usepackage{tikz}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{verbatim,calc,ifthen}

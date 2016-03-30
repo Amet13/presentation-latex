@@ -3,11 +3,11 @@ all: build run
 build:
 	latexmk -xelatex \
 	-synctex=1 presentation.tex
-	
+
 run:
 	# Я использую atril для просмотра PDF
 	atril presentation.pdf &
-	
+
 clean:
 	rm *.aux \
 	*.fdb_latexmk \
@@ -17,4 +17,7 @@ clean:
 	*.synctex.gz \
 	*.toc \
 	*.snm \
-	*.nav
+	*.nav \
+	*.xml \
+	*.blg \
+	*.bcf

@@ -1,0 +1,134 @@
+\title{Заголовок презентации}
+\subtitle{Подзаголовок}
+
+\author[Автор А.\:А. Соавтор И.\:И.]{
+Автор А.\:А., И-41д,
+\href{mailto:mail@mail.ru}{mail@mail.ru} \\
+Соавтор И.\:И., зван. должн., \href{mailto:example@mail.ru}{example@mail.ru}
+}
+\date{Город Год}
+\institute[ВУЗ]{Полное название ВУЗа}
+
+\begin{document}
+
+\frame[plain]{\titlepage} % Титульный слайд
+
+%\section{План}
+% \begin{frame}
+% \frametitle{\insertsection} % Заголовки текущего раздела
+% \tableofcontents
+% \end{frame}
+
+\section{Пункт 1}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\section{Пункт 2}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{main}
+	 \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{enumerate}
+	\item Элемент 1
+	\uncover<2->{\item Элемент 2}
+	\uncover<3->{\item Элемент 3*}
+\end{enumerate}
+\begin{figure}[h]
+	\begin{center}
+		\begin{multicols}{2}
+		\includegraphics[width=0.3\linewidth]{one} \pause \\
+		\uncover<2->{\includegraphics[width=0.3\linewidth]{two}} \pause \\
+		\end{multicols}
+		\uncover<3->{\includegraphics[width=0.15\linewidth]{three}}
+	 \end{center}
+\end{figure}
+\vfill
+\footnotesize{* Какая-то сноска}
+\end{frame}
+
+\section{Пункт 3}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 1}
+\begin{itemize}
+	\begin{multicols}{2}
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1
+	\item Элемент 1 \pause \columnbreak
+	\item Элемент 2
+	\item Элемент 2
+	\item Элемент 2
+	\end{multicols}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\framesubtitle{Подпункт 2}
+\begin{itemize}
+	\item Элемент 1
+	\begin{itemize}
+		\item Подэлемент 1
+		\item Подэлемент 2
+		\item Подэлемент 3
+	\end{itemize}
+	\item Элемент 2
+	\item Элемент 3
+\end{itemize}
+\end{frame}
+
+\section{Выводы}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{itemize}
+	\item Элемент 1
+	\item Элемент 2
+	\item Элемент 3
+	\item Элемент 4
+\end{itemize}
+\end{frame}
+
+\section{Информационные источники}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{itemize}
+	\item Источник 1: \url{http://1.example.com}
+	\item Источник 2: \url{http://2.example.com}
+	\item Источник 3: \url{http://3.example.com}
+	\item Источник 4: \url{http://4.example.com}
+\end{itemize}
+\end{frame}
