@@ -2,6 +2,10 @@ presentation-latex
 ==================
 Шаблон презентации в LaTeX с использованием Beamer
 
+![](https://raw.githubusercontent.com/Amet13/presentation-latex/master/images/title.png)
+
+![](https://raw.githubusercontent.com/Amet13/presentation-latex/master/images/slide.png)
+
 Структура
 ---------
 `beamerthemeSevGU.sty` — файл стиля презентации
@@ -37,6 +41,12 @@ make
 ```bash
 make clean
 ```
+
+16:9
+----
+Есть возможность использовать соотношение сторон не 4:3, а 16:9.
+Для этого нужно в файле `presentation.tex` закомментировать 9ю строку и раскомментировать 10ю.
+![16:9](https://raw.githubusercontent.com/Amet13/presentation-latex/master/images/16-9.png)
 
 Лицензия
 --------
