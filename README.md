@@ -24,11 +24,11 @@ presentation-latex
 
 Работа с LaTeX
 --------------
-Для работы с LaTeX рекомендую использовать XeLaTeX и IDE [LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) или [Atom](https://atom.io/) с плагином [language-latex](https://atom.io/packages/language-latex).
+Для работы с LaTeX рекомендую использовать XeLaTeX и [Atom](https://atom.io/) с плагином [language-latex](https://atom.io/packages/language-latex).
 
 Как установить LaTeX: http://blog.amet13.name/2014/06/latex.html
 
-Обязательно должен быть установлен пакет `latex-beamer`, не забывайте об этом.
+Обязательно должен быть установлен пакет `latex-beamer`.
 
 Для пользователей GNU/Linux можно воспользоваться Makefile.
 Пример компиляции проекта:
@@ -37,6 +37,7 @@ git clone https://github.com/Amet13/presentation-latex.git
 cd presentation-latex/
 make
 ```
+
 Пример очистки ненужных файлов после компиляции:
 ```bash
 make clean
@@ -45,11 +46,14 @@ make clean
 16:9
 ----
 Есть возможность использовать соотношение сторон не 4:3, а 16:9.
-Для этого нужно в файле `presentation.tex` закомментировать 9ю строку и раскомментировать 10ю.
-![16:9](https://raw.githubusercontent.com/Amet13/presentation-latex/master/images/16-9.png)
+Для этого нужно в файле `presentation.tex` привести данные строки к виду:
+```tex
+%\documentclass[xetex,mathserif,serif,t]{beamer}
+\documentclass[aspectratio=169,xetex,mathserif,serif,t]{beamer}
+```
 
 Лицензия
 --------
 [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/deed.ru)
 
-![CC BY SA](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
+![CC BY-SA](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
