@@ -5,8 +5,8 @@ build:
 	-synctex=1 presentation.tex
 
 run:
-	# Я использую atril для просмотра PDF
-	atril presentation.pdf &
+	# Я использую xreader для просмотра PDF
+	xreader presentation.pdf &
 
 clean:
 	rm *.aux \
